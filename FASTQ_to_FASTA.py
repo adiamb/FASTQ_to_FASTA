@@ -42,9 +42,12 @@ def main(fastq, fasta, gz):
 			outfile.write(fasta_line)
 			fastas += 1
 		else:
-			fasta_header = line.replace('@', '>')
-			line_id += 1
-			outfile.write(fasta_header)
+			if '@' not in line:
+				print 'are you sure this is a fastq ??'
+			else:
+				fasta_header = line.replace('@', '>')
+				line_id += 1
+				outfile.write(fasta_header)
 	outfile.close()
 	print 'FASTA records written', fastas, 'average length of fasta sequences ', float(fasta_length//fastas)
 
