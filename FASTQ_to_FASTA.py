@@ -1,5 +1,4 @@
 import sys, subprocess, gzip
-from subprocess import PIPE
 
 infile = sys.argv[1]
 fasta = sys.argv[2]
