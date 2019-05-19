@@ -17,7 +17,7 @@ def main(fastq, fasta, gz):
 	line_n =0
 	line_buffer = 0
 	line_id = 1
-	if gz: ### if gz argument is provided it will write out a gz file else normal
+	if gz == '1': ### if gz argument is provided it will write out a gz file else normal
 		outfile = gzip.open(fasta+'.gz', 'w')
 	else:
 		outfile = open(fasta, 'w')
